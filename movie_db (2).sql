@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3307
--- Время создания: Ноя 13 2023 г., 11:17
+-- Время создания: Ноя 13 2023 г., 11:52
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- База данных: `movie_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Admins`
+--
+
+CREATE TABLE `Admins` (
+  `admin_id` int NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Favorites`
+--
+
+CREATE TABLE `Favorites` (
+  `favorite_id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `movie_id` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -143,9 +168,66 @@ INSERT INTO `Movies_update` (`id`, `id_movie`, `externalId_kpHD`, `externalId_im
 (70, 280172, '4bcd6b4c0361350b9fdae16789d4cb36', 'tt0892769', 10191, '8.230', '8.10', '7.9', 100, 586787, 764709, 214, 9, 98, 'cartoon', 'Как приручить дракона', 'Вы узнаете историю подростка Иккинга, которому не слишком близки традиции его героического племени, много лет ведущего войну с драконами. Мир Иккинга переворачивается с ног на голову, когда он неожиданно встречает дракона Беззубика, который поможет ему и другим викингам увидеть привычный мир с совершенно другой стороны…', 2010, 'https://st.kp.yandex.net/images/film_big/280172.jpg', 'https://st.kp.yandex.net/images/film_iphone/iphone360_280172.jpg', 'мультфильм, фэнтези, комедия, приключения, семейный', 'США, Франция', 'How to Train Your Dragon', NULL, '[\r\n        {\r\n            \"name\": \"Как приручить дракона\"\r\n        },\r\n        {\r\n            \"name\": \"How to Train Your Dragon\"\r\n        },\r\n        {\r\n            \"name\": \"驯龙高手\",\r\n            \"language\": \"CN\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Így neveld a sárkányodat 3D\",\r\n            \"language\": \"HU\",\r\n            \"type\": \"3D version\"\r\n        },\r\n        {\r\n            \"name\": \"드래곤 길들이기 1\",\r\n            \"language\": \"KR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Draktränaren 1\",\r\n            \"language\": \"SE\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Ako vycvičiť draka\",\r\n            \"language\": \"SK\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Ako vycvičiť draka 1\",\r\n            \"language\": \"SK\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Dragons\",\r\n            \"language\": \"FR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Hoe tem je een draak\",\r\n            \"language\": \"NL\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Ejderhanı Nasıl Eğitirsin\",\r\n            \"language\": \"TR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Bí Kíp Luyện Rồng\",\r\n            \"language\": \"VN\",\r\n            \"type\": null\r\n        }\r\n    ]', 'Сын вождя заводит дружбу с драконом — врагом его племени. История о том, что ум и сочувствие куда важнее силы', 'https://avatars.mds.yandex.net/get-ott/239697/2a0000017d72bff6884076340156ac462530/orig', NULL, NULL, NULL, NULL, NULL, NULL),
 (71, 195334, '4a1b9b7ca81e26789bdd29fdf3c424db', 'tt0482571', 1124, '8.518', '8.50', '7.1', 33, 583191, 1369738, 204, 3, 125, 'movie', 'Престиж', 'Роберт и Альфред - фокусники-иллюзионисты, которые на рубеже XIX и XX веков соперничали друг с другом в Лондоне. С годами их дружеская конкуренция на профессиональной почве перерастает в настоящую войну.\n\nОни готовы на все, чтобы выведать друг у друга секреты фантастических трюков и сорвать их исполнение. Непримиримая вражда, вспыхнувшая между ними, начинает угрожать жизни окружающих их людей…', 2006, 'https://st.kp.yandex.net/images/film_big/195334.jpg', 'https://st.kp.yandex.net/images/film_iphone/iphone360_195334.jpg', 'триллер, фантастика, драма, детектив', 'Великобритания, США', 'The Prestige', NULL, '[\r\n        {\r\n            \"name\": \"Престиж\"\r\n        },\r\n        {\r\n            \"name\": \"The Prestige\"\r\n        },\r\n        {\r\n            \"name\": \"顶尖对决\",\r\n            \"language\": \"CN\",\r\n            \"type\": \"台\"\r\n        },\r\n        {\r\n            \"name\": \"El Truco Final (El Prestigio)\",\r\n            \"language\": \"ES\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Prestiż\",\r\n            \"language\": \"PL\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"El Truco Final\",\r\n            \"language\": \"CO\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"프레스티지\",\r\n            \"language\": \"KR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"プレステージ\",\r\n            \"language\": \"JP\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"حیثیت\",\r\n            \"language\": \"IR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"O Grande Truque\",\r\n            \"language\": \"BR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"O Terceiro Passo\",\r\n            \"language\": \"PT\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Prestij\",\r\n            \"language\": \"TR\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"A tökéletes trükk\",\r\n            \"language\": \"HU\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"致命魔术\",\r\n            \"language\": \"CN\",\r\n            \"type\": null\r\n        },\r\n        {\r\n            \"name\": \"Ảo Thuật Gia Đấu Trí\",\r\n            \"language\": \"VN\",\r\n            \"type\": null\r\n        }\r\n    ]', 'Вражда двух иллюзионистов выходит на новый уровень. Фильм Кристофера Нолана с Дэвидом Боуи в роли Николы Теслы', 'https://avatars.mds.yandex.net/get-ott/1531675/2a00000170ed68067f4365ed815233444c93/orig', NULL, NULL, NULL, NULL, NULL, NULL);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Reviews`
+--
+
+CREATE TABLE `Reviews` (
+  `review_id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `movie_id` int DEFAULT NULL,
+  `rating` decimal(3,2) DEFAULT NULL,
+  `comment` text,
+  `date_posted` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Users`
+--
+
+CREATE TABLE `Users` (
+  `user_id` int NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `date_registered` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_login` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `Watched`
+--
+
+CREATE TABLE `Watched` (
+  `watched_id` int NOT NULL,
+  `user_id` int DEFAULT NULL,
+  `movie_id` int DEFAULT NULL,
+  `date_watched` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `Admins`
+--
+ALTER TABLE `Admins`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Индексы таблицы `Favorites`
+--
+ALTER TABLE `Favorites`
+  ADD PRIMARY KEY (`favorite_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `movie_id` (`movie_id`);
 
 --
 -- Индексы таблицы `Movies_update`
@@ -154,14 +236,91 @@ ALTER TABLE `Movies_update`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `Reviews`
+--
+ALTER TABLE `Reviews`
+  ADD PRIMARY KEY (`review_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `movie_id` (`movie_id`);
+
+--
+-- Индексы таблицы `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Индексы таблицы `Watched`
+--
+ALTER TABLE `Watched`
+  ADD PRIMARY KEY (`watched_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `movie_id` (`movie_id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `Admins`
+--
+ALTER TABLE `Admins`
+  MODIFY `admin_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `Favorites`
+--
+ALTER TABLE `Favorites`
+  MODIFY `favorite_id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `Movies_update`
 --
 ALTER TABLE `Movies_update`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
+--
+-- AUTO_INCREMENT для таблицы `Reviews`
+--
+ALTER TABLE `Reviews`
+  MODIFY `review_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `Watched`
+--
+ALTER TABLE `Watched`
+  MODIFY `watched_id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `Favorites`
+--
+ALTER TABLE `Favorites`
+  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
+  ADD CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`movie_id`) REFERENCES `Movies_update` (`id`);
+
+--
+-- Ограничения внешнего ключа таблицы `Reviews`
+--
+ALTER TABLE `Reviews`
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
+  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`movie_id`) REFERENCES `Movies_update` (`id`);
+
+--
+-- Ограничения внешнего ключа таблицы `Watched`
+--
+ALTER TABLE `Watched`
+  ADD CONSTRAINT `watched_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `Users` (`user_id`),
+  ADD CONSTRAINT `watched_ibfk_2` FOREIGN KEY (`movie_id`) REFERENCES `Movies_update` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
