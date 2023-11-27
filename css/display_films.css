@@ -22,6 +22,18 @@
     justify-content: space-between;
     gap: 20px
 }
+
+
+.my_item:hover {
+    transform: scale(1.02); /* Увеличиваем блок на 10% при наведении */
+    transition: transform 0.1s ease-in; /* Замедление при наведении курсора */
+}
+.my_item:not(:hover) {
+    transition: transform 0.1s ease-out; /* Замедление при убирании курсора */
+}
+
+
+
 .my_item_image{
     width: 100%;
 }
@@ -41,14 +53,15 @@ body{
 }
   
 .my_name-on-site {
-font-size: 18px;
 font-weight: bold;
+height: 80px;
 margin-top: 10px;
 color: aliceblue;
-font-size: 48px;
+font-size: 32px;
 }
 
 .description_film{
+    height: 150px;
     color: aliceblue;
     font-size: 24px;
 }

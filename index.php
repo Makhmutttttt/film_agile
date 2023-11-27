@@ -46,9 +46,9 @@
                     // Display each file with cover image and name on the site
                     echo '<div class="my_item">';
                         
-                        
+
                         echo '<div class="my_name-on-site">'.$name.'</div>';
-                        
+
                         if ($poster_url !== null) {
                             echo '<img src="'.$poster_url.'" alt="Cover Image" width="1000" class="my_item_image">';
                         }
