@@ -4,6 +4,7 @@
     margin: 0 auto; /* Центрирует контейнер на странице */
     /* background-color: #303030; Фоновый цвет контейнера (замените на ваш цвет) */
     padding: 20px; /* Внутренний отступ контейнера */
+    
 
 }
 .my_main{
@@ -51,6 +52,14 @@ body{
     display: inline-block;
     text-align: center;    
 }
+.my_details-button:hover{
+    transform: scale(1.02); /* Увеличиваем блок на 10% при наведении */
+    transition: transform 0.1s ease-in; /* Замедление при наведении курсора */
+}
+.my_details-button:not(:hover){
+    transition: transform 0.1s ease-out; /* Замедление при убирании курсора */
+}
+
   
 .my_name-on-site {
 font-weight: bold;

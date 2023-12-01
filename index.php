@@ -6,20 +6,18 @@
     <link rel="stylesheet" type="text/css" href="css/display_films.css">
 </head>
 <body>
-<!--  -->
-<div>    
-    
+
     <div class="my_container">
 
         <ul class="my_main">
             <?php
             // Database connection using MySQLi (Assuming you have a connection established)
             include 'config.php'; // Adjust this path as needed
-////////////////////
+
             $query = "SELECT id, rating_kp, rating_imdb, rating_filmCritics, movieLength, name, description, year, poster_url, poster_previewUrl, genres, countries, alternativeName,names, shortDescription, logo_url
             FROM `Movies_update` WHERE 1";
             $result = $conn->query($query);
-////////////////////
+
             if ($result === false) {
                 die('Error, query failed: ' . $conn->error);
             }
@@ -29,7 +27,7 @@
             } else {
 
                 while ($row = $result->fetch_assoc()) {
-////////////////
+
                     $id = $row['id'];
                     $name = $row['name'];
                     $poster_url = $row['poster_url'];
@@ -42,7 +40,7 @@
                     $movieLength = $row['movieLength'];
                     $countries = $row['countries'];
 
-////////////////
+
                     // Display each file with cover image and name on the site
                     echo '<div class="my_item">';
                         
@@ -66,6 +64,8 @@
             ?>
         </ul>
     </div>
+
+
         
 </body>
 </html>

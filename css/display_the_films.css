@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+.my_container{
+    width: 1400px;
+    margin: 0 auto; /* Центрирует контейнер на странице */
+    /* background-color: #303030; Фоновый цвет контейнера (замените на ваш цвет) */
+    padding: 20px; /* Внутренний отступ контейнера */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+body{
+    background-color: #303030; /* Фоновый цвет контейнера (замените на ваш цвет) */
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+.about_films{
+    width: 1200px;
+    background-color: #525252; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+
+
+}
+.container_poster{
+    width: 40%;
+    /* background-color: #525252; Фоновый цвет контейнера (замените на ваш цвет) */
+}
+.container_info{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    /* background-color: #525252; Фоновый цвет контейнера (замените на ваш цвет) */
+}
+/* .about_film{
+    width: 80%;
+} */
+.my_item_image{
+    width: 100%;
+}
+.poster_image{
+
+    width: 90%;
+}
+.container_poster{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Отступ между элементами */
+
+}
+.my_name-on-site{
+    font-size: 50px;
+}
+.info_film{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.info_side{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.description{
+    background-color: #525252; 
+    width: 1200px;
+    /* padding: 20px; */
+
+}
+.des_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1100px;
+}
+.iframe {
+    width: 1200px !important;
+    height: 800px !important;
+}
