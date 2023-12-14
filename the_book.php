@@ -18,8 +18,7 @@
                 $movieId = $_GET['id'];
 
                 // Ваш код для выполнения запроса и получения информации о фильме
-                $query = "SELECT id, rating_kp, rating_imdb, rating_filmCritics, movieLength, name, description, year, poster_url, poster_previewUrl, genres, countries, alternativeName, names, shortDescription, logo_url, trailer
-                FROM `Movies_update` WHERE id = $movieId";
+                $query = "SELECT id, rating_kp, rating_imdb, rating_filmCritics, movieLength, name, description, year, poster_url, poster_previewUrl, genres, countries, alternativeName, names, shortDescription, logo_url, trailer FROM `Movies_update` WHERE id = $movieId";
 
                 $result = $conn->query($query);
                 // Выполните запрос и обработайте результаты
@@ -111,13 +110,30 @@
                         echo '<div class="des_text">'.$description.'</div>';
 
                         echo '</div>';
-                        echo  '<div>'.$trailer.' </div>';
+                        echo  $trailer;
                         echo '<style>
                             iframe {
                                 width: 1240px !important;
                                 height: 800px !important;
                             }
                             </style>';
+
+                            
+                            echo '<div class="comment-section">';
+                            echo '<h2>Оставь комментарию</h2>';
+                            echo '<div class="comment-form">';
+                                echo '<textarea placeholder="Напиши тут"></textarea>';
+                                echo '<button>Отправить</button>';
+                            echo '</div>';
+                    
+                            // Assume you have an array of comments
+                            $comments = array("Омов-то она любит, но у их трупов глаза вырезать ей эта любовь не мешает... Враги убили её отца и перебили половину народа, а она приказывает их простить и им подчиниться... Пацифизм 100-й лвл. Не могу 10 поставить, ставлю 9", "Какая озвучка лучше дубляж или новый дубляж???", "Здравствуйте. На Рутрекере появились казахские субтитры к данному фильму, добавьте их к вашему сайту, пожалуйста.");
+                    
+                            // Display existing comments
+                            foreach ($comments as $comment) {
+                                echo '<div class="comment">' . $comment . '</div>';
+                            }
+                        echo '</div>';
 
                     }
 
