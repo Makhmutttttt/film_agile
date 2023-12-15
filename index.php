@@ -46,7 +46,7 @@
                         <span class="icon icon-bar"></span>
                 </button>
                 <!-- lOGO -->
-                <a href="index.html" class="navbar-brand">Кино</a>
+                <a href="index.php" class="navbar-brand">Кино</a>
             </div>
 
             <!-- MENU LINKS -->
