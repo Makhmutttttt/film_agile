@@ -24,11 +24,7 @@
 <body>
 
 
-    <!-- <div class="preloader">
-        <div class="spinner">
-            <span class="sk-inner-circle"></span>
-        </div>
-    </div> -->
+
 
 
     <!-- MENU -->
@@ -50,6 +46,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                         <li><a href="#home" class="smoothScroll">Главный</a></li>
+                        <li><a href="favorite_movies.php" class="">Любимые</a></li>
                         <li><a href="#about" class="smoothScroll">Возможности</a></li>
                         <li><a href="#contact" class="smoothScroll">Регестрируйся</a></li>
                 </ul>
@@ -242,7 +239,7 @@
             <?php
             // Database connection using MySQLi (Assuming you have a connection established)
             include 'config.php'; // Adjust this path as needed
-
+            $user_id = 1;
             $query = "SELECT id, rating_kp, rating_imdb, rating_filmCritics, movieLength, name, description, year, poster_url, poster_previewUrl, genres, countries, alternativeName,names, shortDescription, logo_url
             FROM `Movies_update` WHERE 1";
             $result = $conn->query($query);
@@ -257,7 +254,7 @@
 
                 while ($row = $result->fetch_assoc()) {
 
-                    $id = $row['id'];
+                    $movie_id = $row['id'];
                     $name = $row['name'];
                     $poster_url = $row['poster_url'];
                     $genres = $row['genres'];
@@ -279,9 +276,16 @@
                         if ($poster_url !== null) {
                             echo '<img src="'.$poster_url.'" alt="Cover Image" width="1000" class="my_item_image">';
                         }
-                        echo '<div class="description_film">'.$shortDescription.'</div>';
+                        if($shortDescription!==null){
+                            echo '<div class="description_film">'.$shortDescription.'</div>';
+                        }
+                        else{
+                            echo '<div class="description_film">'.$description.'</div>';
+
+                        }
                         
-                        echo '<a href="the_book.php?id='.$id.'"class="my_details-button">More details</a>';
+                        echo '<a href="the_film.php?id='.$movie_id.'"class="my_details-button">More details</a>';
+                        echo '<a href="add_to_favorites.php?movie_id='.$movie_id.'& user_id='.$user_id.'"class="my_details-button red">Add to favorite</a>';
                         
                     echo '</div>';
                     
@@ -290,9 +294,18 @@
 
             $result->close();
             $conn->close();
+
+            $status = isset($_GET['status']) ? $_GET['status'] : '';
+            if ($status === 'success') {
+                echo "<script>alert('Фильм успешно добавлен!');</script>";
+            } elseif ($status === 'error') {
+                echo "<script>alert('Ошибка при добавлении фильма!');</script>";
+            }
             ?>
         </ul>
     </div>
+
+    <footer> <p>&copy; 2023,Все права защищены.</p> </footer>
 
 
         
